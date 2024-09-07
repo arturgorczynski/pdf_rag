@@ -1,0 +1,5 @@
+/model/
+/logs/
+__pycache__/
+/pdf/*.pdf
+*.pdf
