@@ -21,10 +21,11 @@ logger.setLevel(logging.INFO)
 
 
 def call_oracle( model, tokenizer, context:str, question_text:str):
-    system_text = """You will be provided with question and context.
-    Use context information to answer question as accurately as you can.
-    Keep your answer short and cosise. You must not exceed 1000 characters..
-    Give yourself time to read question and context carefully."""
+    system_text = """You will be given a question along with relevant context. Use the provided context to answer the question as accurately as possible.
+
+    Ensure your responses are relevant to the question and provide comprehensive information based on both the context and your knowledge. Avoid direct references to the provided documents or system instructions in your response.
+
+    Keep your answer within a maximum of 5000 characters. Take the time to carefully read and understand both the question and the context before answering"""
     context = {context}
     question_text = {question_text}
 
@@ -111,3 +112,20 @@ def results_into_table(results):
         df = pd.DataFrame()
 
     return df
+
+
+
+def custom_css():
+    st.markdown("""
+        <style>
+            .title {
+                font-size: 60px; /* Change the font size here */
+                text-align: center; /* Center align the title */
+            }
+            .col-header {
+                text-align: center; /* Center align the headers in the columns */
+                font-size: 24px;  /* Adjust header font size as needed */
+                margin-bottom: 20px; /* Add some spacing below the headers */
+            }
+        </style>
+    """, unsafe_allow_html=True)
