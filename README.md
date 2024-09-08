@@ -18,3 +18,6 @@ The system is powered by state-of-the-art models and vectorization techniques to
 3. **Instal requirements.txt**
 4. **Run with command streamlit run app.py**
 5. **In case of GPU configuration error run application with streamlit run app.py --server.enableXsrfProtection false**
+
+
+**Please ensure you have installed poppler, otherwise pdf reader wont run**
